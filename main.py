@@ -1,4 +1,5 @@
 import math
+import pathlib
 from tkinter import *
 
 PINK = "#e2979c"
@@ -75,7 +76,7 @@ timerLabel = Label(text="Pomodoro", bg=YELLOW, fg=RED, font=(FONT_NAME, 30, "bol
 timerLabel.grid(column=1, row=0)
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
-tomatoImg = PhotoImage(file="tomato.png")
+tomatoImg = PhotoImage(file=pathlib.Path(__file__).parent/"tomato.png")
 canvas.create_image(100, 112, image=tomatoImg)
 timerText = canvas.create_text(100, 135, text="25:00", fill="white", font=(FONT_NAME, 34, "bold"))
 canvas.grid(column=1, row=1)
